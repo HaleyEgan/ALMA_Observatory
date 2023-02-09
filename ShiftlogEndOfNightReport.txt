@@ -1,0 +1,214 @@
+
+
+========================================================================
+DAILY REPORT 
+========================================================================
+Shift: ID=1909739, 2022-10-24T19:00:00 - 2022-10-25T12:00:00
+
+Lead: 
+Morning: 
+Day: 
+Night:
+Array Operators: 
+SACMs:
+
+This report:     https://lists.alma.cl/pipermail/almasci_chile/2022-October/date.html
+Shift Log:       https://asa.alma.cl/webslt/#/
+Weather:         http://weather.aiv.alma.cl/index.php?loc=meteo6&span=24hr
+APEX PWV:        http://www.apex-telescope.org/weather/RadioMeter/index.php
+Antennas status: http://dashboard.alma.cl/
+
+------------------------------------------------------------------------
+OPERATING CONDITIONS
+------------------------------------------------------------------------
+
+Weather conditions
+ + Wind speed: 0.1 - 15.2 [m/s]
+ + PWV: 0.2 - 0.6 [mm]
+ + Temperature: -3.4 - 4.7 [°C]
+
+
+Average antennas used during the shift, by band and array family:
+
+---+++ 12-m Array
+ B3: 43x12m, 0x7m
+ B6: 43x12m, 0x7m
+ B7: 42x12m, 0x7m
+ B8: 42x12m, 0x7m
+ B9: 41x12m, 0x7m
+
+---+++ 7-m Array
+ B4: 0x12m, 11x7m
+ B6: 0x12m, 11x7m
+ B7: 0x12m, 11x7m
+
+---+++ TP Array
+ B3: 4x12m, 0x7m
+ B6: 4x12m, 0x7m
+
+---+++ MIXED Array
+
+
+Approximate Array configuration:
+
+------------------------------------------------------------------------
+OBSERVATIONS
+------------------------------------------------------------------------
+Software version: ONLINE-CYCLE9-B-13-2022-10-21-28-00-00
+Handover started at 19:00:00
+
+0 unplanned FSRs
+
+
+Technical Downtime:
+        12-m:     1h 8min 38s  PRTSPR-61478,PRTSPR-61477,PRTSPR-61482,PRTSPR-61479,PRTSPR-61493
+         7-m:       14min 50s  PRTSPR-61493,PRTSPR-61486
+          TP:       20min 25s  PRTSPR-61493
+       Mixed:              0s  
+      Others:              0s
+
+Weather Downtime:
+        12-m:              0s
+         7-m:              0s
+          TP:              0s
+       Mixed:              0s
+      Others:              0s
+
+Scheduling Downtime:
+        12-m:              0s
+         7-m:              0s
+          TP:              0s
+       Mixed:              0s
+      Others:              0s
+
+Execution Efficiency:
+(= total time of successful PI obs./allocated time)
+
+        12-m:   62.35%
+         7-m:   65.55%
+          TP:   88.59%
+       Mixed:
+
+---+++ 12-m Array
+   * Allocation for 12 [m]                                       : 16:23:00  
+      * 2022-10-24T19:37:00 - 2022-10-25T12:00:00
+   * Breakdown (within allocation)                                
+       * PI Observations                                         : 11:21:58
+       * Observatory Calibrations                                : 01:31:04
+       * EOC                                                     : 00:58:30
+       * Downtime                                                : 01:08:38
+       * Remaining time                                          : 01:22:50
+       * Main Arrays:Array4-BLC Array8-BLC Array9-BLC Array11-BLC Array13-BLC Array15-BLC Array16-BLC Array18-BLC Array20-BLC Array26-BLC Array27-BLC Array29-BLC Array30-BLC
+
+   * 11 number of PiObs SBEX with SUCCESS status                 : 10:12:56
+
+
+	|     PI Observations  |     *NORMAL*  |      *CALIB*  |       *TEST*  |        *ALL*  |
+	|     *SUCCESS COUNT*  |           11  |           15  |            5  |           31  |
+	|             *B1_su*  |            0  |            0  |            2  |            2  |
+	|             *B3_su*  |            2  |            7  |            2  |           11  |
+	|             *B6_su*  |            2  |            2  |            0  |            4  |
+	|             *B7_su*  |            3  |            5  |            1  |            9  |
+	|             *B8_su*  |            3  |            1  |            0  |            4  |
+	|             *B9_su*  |            1  |            0  |            0  |            1  |
+	|   *UNSUCCESS COUNT*  |            4  |            1  |            0  |            5  |
+	|             *B3_un*  |            0  |            1  |            0  |            1  |
+	|             *B7_un*  |            1  |            0  |            0  |            1  |
+	|             *B8_un*  |            2  |            0  |            0  |            2  |
+	|             *B9_un*  |            1  |            0  |            0  |            1  |
+	|       *TOTAL COUNT*  |           15  |           16  |            5  |           36  |
+	|      *SUCCESS TIME*  |     10:12:56  |     01:28:52  |     00:58:30  |     12:40:19  |
+	|    *UNSUCCESS TIME*  |     01:12:32  |     00:02:11  |            -  |     01:14:44  |
+	|        *TOTAL TIME*  |     11:25:28  |     01:31:04  |     00:58:30  |     13:55:03  |
+
+
+---+++ 7-m Array
+   * Allocation for 7 [m]                                        : 16:23:26  
+      * 2022-10-24T19:36:34 - 2022-10-25T12:00:00
+   * Breakdown (within allocation)                                
+       * PI Observations                                         : 12:55:33
+       * Observatory Calibrations                                : 02:44:03
+       * EOC                                                     :        -
+       * Antenna Integration                                     :        -
+       * Downtime                                                : 00:14:50
+       * Remaining time                                          : 00:29:00
+   * 8 number of PiObs SBEX with SUCCESS status                  : 10:44:38
+
+
+	|     PI Observations  |     *NORMAL*  |      *CALIB*  |       *TEST*  |        *ALL*  |
+	|     *SUCCESS COUNT*  |            8  |           13  |            0  |           22  |
+	|             *B3_su*  |            0  |            7  |            0  |            7  |
+	|             *B4_su*  |            1  |            1  |            0  |            2  |
+	|             *B6_su*  |            5  |            1  |            0  |            6  |
+	|             *B7_su*  |            2  |            4  |            0  |            7  |
+	|   *UNSUCCESS COUNT*  |            4  |            3  |            0  |            7  |
+	|             *B3_un*  |            0  |            2  |            0  |            2  |
+	|             *B4_un*  |            1  |            0  |            0  |            1  |
+	|             *B7_un*  |            3  |            1  |            0  |            4  |
+	|       *TOTAL COUNT*  |           13  |           16  |            0  |           29  |
+	|      *unclassified*  |            1  |            -  |            -  |            1  |
+	|      *SUCCESS TIME*  |     10:44:38  |     02:27:23  |            -  |     13:40:01  |
+	|    *UNSUCCESS TIME*  |     01:46:52  |     00:16:39  |            -  |     02:03:32  |
+	|        *TOTAL TIME*  |     12:59:30  |     02:44:03  |            -  |     15:43:33  |
+
+
+---+++ TP Array
+   * Allocation for Total Power                                  : 14:53:00  
+      * 2022-10-24T21:06:59 - 2022-10-25T12:00:00
+   * Breakdown (within allocation)                                
+       * PI Observations                                         : 13:51:49
+       * Observatory Calibrations                                : 00:21:30
+       * EOC                                                     :        -
+       * Antenna Integration                                     :        -
+       * Downtime                                                : 00:20:25
+       * Remaining time                                          : 00:19:16
+
+
+---++++ ACA-TP
+   * 12 number of PiObs SBEX with SUCCESS status                 : 13:49:52
+      * time spent within allocation                             : 13:11:04
+
+
+	|     PI Observations  |     *NORMAL*  |      *CALIB*  |       *TEST*  |        *ALL*  |
+	|     *SUCCESS COUNT*  |           12  |            5  |            0  |           17  |
+	|             *B3_su*  |            4  |            3  |            0  |            7  |
+	|             *B6_su*  |            8  |            2  |            0  |           10  |
+	|   *UNSUCCESS COUNT*  |            1  |            0  |            0  |            1  |
+	|             *B6_un*  |            1  |            0  |            0  |            1  |
+	|       *TOTAL COUNT*  |           13  |            5  |            0  |           18  |
+	|      *SUCCESS TIME*  |     13:49:52  |     00:34:16  |            -  |     14:24:09  |
+	|    *UNSUCCESS TIME*  |     00:44:49  |            -  |            -  |     00:44:49  |
+	|        *TOTAL TIME*  |     14:34:42  |     00:34:16  |            -  |     15:08:59  |
+
+
+---++++ SQLD-TP
+
+
+---+++ MIXED Array
+
+
+------------------------------------------------------------------------
+PROBLEMS
+------------------------------------------------------------------------
+
+https://jira.alma.cl/browse/PRTSPR-61477  APE2:Handover: DA41 PSD in shutdown
+https://jira.alma.cl/browse/PRTSPR-61478  APE2:Handover: DV19 PSA in shutdown
+https://jira.alma.cl/browse/PRTSPR-61479  APE2:Handover: DA46 PSA in shutdown
+https://jira.alma.cl/browse/PRTSPR-61480  APE2:Handover: CM05 FE devices went to stop
+https://jira.alma.cl/browse/PRTSPR-61482  APE2: handOver: DA49 : FEdevices went to stop.
+https://jira.alma.cl/browse/PRTSPR-61486  APE2: ACA7m: PR#2: Cannot set the photonic reference frequency to 114.613GHz
+https://jira.alma.cl/browse/PRTSPR-61487  APE2:ACA7m: CM09 FE devices went to stop
+https://jira.alma.cl/browse/PRTSPR-61489  APE2: ACA7m :CM09 FE devices went to stop(duplicate)
+https://jira.alma.cl/browse/PRTSPR-61493  APE2: BL: CONTROL/BDC/cppContainer crashed
+https://jira.alma.cl/browse/PRTSPR-61495  APE2: 12m array: PI science: WVR PWV is not normal (DV04, DA61, DV06)
+https://jira.alma.cl/browse/PRTSPR-61498  APE2: BL: DV02 Elev. axis in Standby. CAN com error to servo amps
+https://jira.alma.cl/browse/PRTSPR-61499  APE2: BL: DA48 ArrayTime is in FW Array
+https://jira.alma.cl/browse/PRTSPR-61500  (statistics) 7m array observatiobn was aborted to make a B7 cone search
+https://jira.alma.cl/browse/PRTSPR-61510  (statistics) 12m array PI was aborted to start a Solar project
+https://jira.alma.cl/browse/PRTSPR-61511  (statistics) 7m array PI was aborted to start a Solar project
+https://jira.alma.cl/browse/PRTSPR-61512  (statistics) TP array PI was aborted to start a Solar project
+
+
+-----------------------------------------------------------------------
+PLANS FOR TONIGHT
+-----------------------------------------------------------------------
