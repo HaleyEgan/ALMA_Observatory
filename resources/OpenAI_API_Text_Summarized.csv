@@ -1,0 +1,313 @@
+key,Text,label,Text_Summarization
+PRTSIR-5356,"Pablo requested to run doAmbDip on DV14 this morning. It failed right away, with the most probable culprit being the PSA which was found to be OFF. AOS: BL: DV14 PSA was found off. AOS:",1,pablo requested to run doambdip on dv14 this morning but it failed due to the psa being off
+PRTSIR-6489,"While running:
+
+Observatory Calibration: Grid Monitoring SBs 10.4 (Version
+0.41)
+--SUCCESS--
+Start/End 08:11:27 - 08:44:57
+Project Code 0000.0.00193.CSV PI rkneissl
+SchedBlock Band 7 Group 6 20h-24h ExecBlock uid://A002/Xa42f75/Xb2a
+SB UID uid://A002/X7a0c46/Xb8 QA0 Status
+Band ALMA_RB_03
+ALMA Build 201404-CYCLE2-ON-B-2015-06-20-01-00-00
+Array Name Array005 Array/Corr 12 [m]/64-antenna
+
+the SB presents a Yellow triangle on scan 19. We check the Java log and found this:
+{noformat}
+2015-06-24T08:41:34.898 INFO [CONTROL/Array005] Using a horizon offset of (0.0, 0.0) arc-seconds at 08:43:00.864
+2015-06-24T08:41:56.753 INFO [CONTROL/Array005] Subscan 1 has an intent of ON_SOURCE, takes 5.760 seconds & starts at 08:41:56.736
+2015-06-24T08:41:56.883 ERROR [CONTROL/Array005] Error invoking an observing mode function. (type=10410, code=0) [ Message='Problem completing the subscan.' ]
+2015-06-24T08:41:47.193 ERROR [CONTROL/Array005] Internal correlator hardware problem (type=20000, code=7)
+2015-06-24T08:41:47.192 ERROR [CONTROL/Array005] Internal correlator hardware problem (type=20000, code=7)
+2015-06-24T08:41:47.191 ERROR [CONTROL/Array005] Hardware communications (type=20100, code=1) [ Cause='Configuration for baseband pair 0 was not completed ' ]
+{noformat}
+
+We stop the SB execution and try again. Working so far... AOS: BL: Internal correlator hardware problem AOS:",1,bl hardware communications was found while running an observatory calibration grid monitoring sbs 104 version 041 with project code 0000000193csv pi rkneissl schedblock band 7 group 6 20h24h execblock uida002xa42f75xb2a sb uid uida002x7a0c46xb8 qa0 status band
+PRTSIR-2303,"Happened again tonight while trying the run the focus SB on band 7. We will raise the priority to critical because this antenna is used in ACA total observations.
+
+This is a recurring problem:
+
+|PRTSIR-2268|AOS: DA64: failed to lock on band 7.|02/May/14|Closed|Cannot Reproduce|	
+|PRTSIR-2152|DA64 and DV12 Band 7 do not lock at Sky Freq = 289.978950 GHz|02/May/14|Closed|Incomplete|	
+|PRTSIR-1703|AOS: DA64 Band 7 does not lock at LO1=339.764838GHz|06/Mar/14|Closed|Cannot Reproduce| AOS: DA64 failing to lock in band 7 AOS:",1,da64 failing to lock in band 7 has happened multiple times and the priority of this issue has been raised to critical because the antenna is used in aca total observations
+PRTSIR-14740,"{noformat}
+uid://A002/Xd9668b/Xe9c7 Atmosphere Cal Results, DA47 antenna(s), all baseband(s), both pol(s), band: 03.
+___________________________________________________________________________________________________________________________________
+ Scan	 Antenna	  Freq. Range	Baseband	 Pol	      Tsys	      Trec	    SBgain
+    2	    DA47	89.49 - 91.49	    BB_1	   X	    68.358	    47.529	     0.990
+    2	    DA47	89.49 - 91.49	    BB_1	   Y	    66.324	    39.068	     0.990
+    2	    DA47	91.43 - 93.43	    BB_2	   X	    71.176	    59.892	     0.990
+    2	    DA47	91.43 - 93.43	    BB_2	   Y	    67.141	    45.604	     0.990
+    2	    DA47	101.49 - 103.49	    BB_3	   X	    66.930	    49.903	     0.990
+    2	    DA47	101.49 - 103.49	    BB_3	   Y	    71.275	    46.800	     0.990
+    2	    DA47	103.49 - 105.49	    BB_4	   X	    62.216	    41.547	     0.990
+    2	    DA47	103.49 - 105.49	    BB_4	   Y	    74.196	    49.682	     0.990
+    4	    DA47	89.49 - 91.49	    BB_1	   X	    62.021	    39.384	     0.990
+    4	    DA47	89.49 - 91.49	    BB_1	   Y	    66.803	    38.336	     0.990
+    4	    DA47	91.43 - 93.43	    BB_2	   X	    69.598	    56.042	     0.990
+    4	    DA47	91.43 - 93.43	    BB_2	   Y	    67.467	    45.416	     0.990
+    4	    DA47	101.49 - 103.49	    BB_3	   X	    71.384	    52.380	     0.990
+    4	    DA47	101.49 - 103.49	    BB_3	   Y	    71.733	    44.532	     0.990
+    4	    DA47	103.49 - 105.49	    BB_4	   X	    68.403	    45.517	     0.990
+    4	    DA47	103.49 - 105.49	    BB_4	   Y	    74.702	    48.832	     0.990
+    6	    DA47	89.49 - 91.49	    BB_1	   X	    58.349	    39.964	     0.990
+    6	    DA47	89.49 - 91.49	    BB_1	   Y	    66.177	    37.117	     0.990
+    6	    DA47	91.43 - 93.43	    BB_2	   X	    67.778	    56.841	     0.990
+    6	    DA47	91.43 - 93.43	    BB_2	   Y	    66.971	    43.949	     0.990
+    6	    DA47	101.49 - 103.49	    BB_3	   X	    76.316	    52.799	     0.990
+    6	    DA47	101.49 - 103.49	    BB_3	   Y	    71.078	    44.187	     0.990
+    6	    DA47	103.49 - 105.49	    BB_4	   X	    72.091	    45.051	     0.990
+    6	    DA47	103.49 - 105.49	    BB_4	   Y	    73.963	    47.093	     0.990
+    8	    DA47	89.49 - 91.49	    BB_1	   X	    58.158	   277.884	     0.990
+    8	    DA47	89.49 - 91.49	    BB_1	   Y	    66.480	    38.849	     0.990
+    8	    DA47	91.43 - 93.43	    BB_2	   X	    67.848	   116.398	     0.990
+    8	    DA47	91.43 - 93.43	    BB_2	   Y	    67.227	    45.288	     0.990
+    8	    DA47	101.49 - 103.49	    BB_3	   X	     1.555	   -28.613	     0.990
+    8	    DA47	101.49 - 103.49	    BB_3	   Y	    71.407	    46.103	     0.990
+    8	    DA47	103.49 - 105.49	    BB_4	   X	    -1.000	   -38.437	     0.990
+    8	    DA47	103.49 - 105.49	    BB_4	   Y	    74.382	    49.505	     0.990
+   10	    DA47	89.49 - 91.49	    BB_1	   X	    -1.000	   -89.287	     0.990
+   10	    DA47	89.49 - 91.49	    BB_1	   Y	    66.225	    38.466	     0.990
+   10	    DA47	91.43 - 93.43	    BB_2	   X	    38.554	    12.538	     0.990
+   10	    DA47	91.43 - 93.43	    BB_2	   Y	    66.956	    45.933	     0.990
+   10	    DA47	101.49 - 103.49	    BB_3	   X	    60.264	   766.946	     0.990
+   10	    DA47	101.49 - 103.49	    BB_3	   Y	    71.075	    45.688	     0.990
+   10	    DA47	103.49 - 105.49	    BB_4	   X	    55.333	  1127.157	     0.990
+   10	    DA47	103.49 - 105.49	    BB_4	   Y	    73.916	    48.458	     0.990
+
+{noformat}
+
+_Auto generated ticket_
+[link to EXEC entry|https://asa.alma.cl/webshiftlog?ebuid=uid://A002/Xd9668b/Xe85d]
+[link to AQUA |https://asa.alma.cl/webaqua?ebuid=uid://A002/Xd9668b/Xe85d]
+[link to ProTrack |https://asa.alma.cl/protrack?schedBlockUid=uid://A001/X133e/X2c] APE1: BL: DA47: FE04: negative Trec, POLX, Band3 APE1: DA47 FE04",1,"negative trec poly band3
+
+this text is about the atmosphere cal results for da47 antennas all basebands both pols band 03 it includes scan antenna frequency range baseband pol tsys trec and sbgain for each result"
+PRTSIR-4051,"While running:
+
+SciVer_LB_test-Mira (Version 0.3) --FAIL--
+Start/End 02:49:17 - 04:00:49
+Project Code 0000.0.00246.CSV PI violette
+SchedBlock SiO Tuning mira_B3_FDM ExecBlock uid://A002/X8fee6b/X457
+SB UID uid://A002/X8fa7af/X19 QA0 Status
+Band ALMA_RB_03
+ALMA Build ALMA-10_6_0-B-2014-09-30-01-00-00
+Array Name Array012 Array/Corr 12 [m]/64-antenna
+
+
+the SB fail with th following error:
+
+
+Python log:
+{noformat}
+2014-10-13T04:00:44.229 SSR/Array012-BL/StandardInterferometry [Array012-BL/ScanList] Traceback (most recent call last):
+  File ""/alma/ACS-current/ACSSW/intlist/SSR/lib/python/site-packages/Observation/ScanList.py"", line 138, in execute
+    obsmode.doScanSequence(scanSequence)
+  File ""/alma/ACS-12.2/ACSSW/lib/python/site-packages/CCL/InterferometryObservingMode.py"", line 168, in doScanSequence
+    cb.waitForCompletion(timeToWait);
+  File ""/alma/ACS-12.2/ACSSW/lib/python/site-packages/ControlCommonCallbacks/SimpleCallbackImpl.py"", line 106, in waitForCompletion
+    raise ex
+AsynchronousFailureExImpl: ControlCommonExceptionsImpl.AsynchronousFailureExImpl(errorTrace=ACSErr.ErrorTrace(file='ObservingModeErrorAcsJCompletion.java', lineNum=41, routine='<init>', host='gas01', process='CONTROL/ACC/javaContainer', thread='Thread-38570246', timeStamp=136324653991440000L, sourceObject='CONTROL/Array012', errorType=10410L, errorCode=0L, severity=Error, shortDescription='Error invoking an observing mode function.', data=[ACSErr.NameValue(name='javaex.class', value='alma.ObservingModeExceptions.wrappers.AcsJObservingModeErrorEx')], previousError=[]))
+
+2014-10-13T04:00:44.229 SSR/Array012-BL/StandardInterferometry [Array012-BL/ScanList] Exception thrown by obsmode.doScanSequence(), considering this fatal!
+2014-10-13T04:00:44.266 SSR/Array012-BL/StandardInterferometry [Array012-BL/StandardInterferometry] Exception caught: ControlCommonExceptionsImpl.AsynchronousFailureExImpl(errorTrace=ACSErr.ErrorTrace(file='ObservingModeErrorAcsJCompletion.java', lineNum=41, routine='<init>', host='gas01', process='CONTROL/ACC/javaContainer', thread='Thread-38570246', timeStamp=136324653991440000L, sourceObject='CONTROL/Array012', errorType=10410L, errorCode=0L, severity=Error, shortDescription='Error invoking an observing mode function.', data=[ACSErr.NameValue(name='javaex.class', value='alma.ObservingModeExceptions.wrappers.AcsJObservingModeErrorEx')], previousError=[]))
+2014-10-13T04:00:49.443 SSR/Array012-BL/StandardInterferometry Main - Exception is an ACS Error exception: ControlCommonExceptionsImpl.AsynchronousFailureExImpl(errorTrace=ACSErr.ErrorTrace(file='ObservingModeErrorAcsJCompletion.java', lineNum=41, routine='<init>', host='gas01', process='CONTROL/ACC/javaContainer', thread='Thread-38570246', timeStamp=136324653991440000L, sourceObject='CONTROL/Array012', errorType=10410L, errorCode=0L, severity=Error, shortDescription='Error invoking an observing mode function.', data=[ACSErr.NameValue(name='javaex.class', value='alma.ObservingModeExceptions.wrappers.AcsJObservingModeErrorEx')], previousError=[]))
+2014-10-13T04:00:49.445 SSR/Array012-BL/StandardInterferometry Main - Unexpected exception when executing script: ControlCommonExceptionsImpl.AsynchronousFailureExImpl(errorTrace=ACSErr.ErrorTrace(file='ObservingModeErrorAcsJCompletion.java', lineNum=41, routine='<init>', host='gas01', process='CONTROL/ACC/javaContainer', thread='Thread-38570246', timeStamp=136324653991440000L, sourceObject='CONTROL/Array012', errorType=10410L, errorCode=0L, severity=Error, shortDescription='Error invoking an observing mode function.', data=[ACSErr.NameValue(name='javaex.class', value='alma.ObservingModeExceptions.wrappers.AcsJObservingModeErrorEx')], previousError=[]))
+2014-10-13T04:00:49.447 SSR/Array012-BL/StandardInterferometry Main - Wrapping exception in an ExecutionErrorEx
+2014-10-13T04:00:49.453 SSR/Array012-BL/StandardInterferometry Main - Setting error in ScriptExecutor
+2014-10-13T04:00:49.455 None setExecError - Error in the script execution: ACSErr.ErrorTrace(file='/alma/ACS-12.2/ACSSW/bin/SBExecProcess.py', lineNum=138, routine='<module>', host='gas01', process='19150', thread='MainThread', timeStamp=136324656494494290L, sourceObject='', errorType=10100L, errorCode=5L, severity=Error, shortDescription='General ScriptExecutor runtime error', data=[], previousError=[ACSErr.ErrorTrace(file='ObservingModeErrorAcsJCompletion.java', lineNum=41, routine='<init>', host='gas01', process='CONTROL/ACC/javaContainer', thread='Thread-38570246', timeStamp=136324653991440000L, sourceObject='CONTROL/Array012', errorType=10410L, errorCode=0L, severity=Error, shortDescription='Error invoking an observing mode function.', data=[ACSErr.NameValue(name='javaex.class', value='alma.ObservingModeExceptions.wrappers.AcsJObservingModeErrorEx')], previousError=[])])
+2014-10-13T04:00:49.458 None Error in the script execution: ACSErr.ErrorTrace(file='/alma/ACS-12.2/ACSSW/bin/SBExecProcess.py', lineNum=138, routine='<module>', host='gas01', process='19150', thread='MainThread', timeStamp=136324656494494290L, sourceObject='', errorType=10100L, errorCode=5L, severity=Error, shortDescription='General ScriptExecutor runtime error', data=[], previousError=[ACSErr.ErrorTrace(file='ObservingModeErrorAcsJCompletion.java', lineNum=41, routine='<init>', host='gas01', process='CONTROL/ACC/javaContainer', thread='Thread-38570246', timeStamp=136324653991440000L, sourceObject='CONTROL/Array012', errorType=10410L, errorCode=0L, severity=Error, shortDescription='Error invoking an observing mode function.', data=[ACSErr.NameValue(name='javaex.class', value='alma.ObservingModeExceptions.wrappers.AcsJObservingModeErrorEx')], previousError=[])])
+2014-10-13T04:00:53.281 SSR/Array012-BL/StandardInterferometry disconnect - Disconnect called for client
+2014-10-13T04:00:53.284 SSR/Array012-BL/StandardInterferometry Main - SB executor process finished.
+{noformat}
+
+CDP Master log:
+{noformat}
+2014-10-13T03:59:49.926 [CDP_MASTER_THREAD_0 - ] failed to abort channel average stream: Exception thrown at DataCollector.cpp:1418 - this data collector is not collecting
+2014-10-13T03:59:49.928 [CDP_MASTER_THREAD_0 - ] failed to abort full resolution stream: Exception thrown at DataCollector.cpp:1418 - this data collector is not collecting
+2014-10-13T04:00:01.990 [CDP_MASTER_THREAD_0 - ] abort caught an exception: Exception thrown at DataCollector.cpp:331 - this data collector is not collecting
+2014-10-13T04:00:01.991 [CORR/CDPMaster/cppContainer-GL - ACS::Thread::threadSvc] Problem in Thread Execution (type=37, code=9)
+2014-10-13T04:00:01.991 [CORR/CDPMaster/cppContainer-GL - ACS::Thread::threadSvc] An unexpected exception has been caught (type=10, code=21)
+2014-10-13T04:00:08.426 [CORR/CDPMaster/cppContainer-GL - ] CDP_MASTER_THREAD_0: timeout on pthread mutex (to=50000000acs delta=0s/1632us)
+2014-10-13T04:00:47.129 [CORR/CDPMaster/cppContainer-GL - ] CDP_MASTER_THREAD_0: timeout on pthread mutex (to=50000000acs delta=0s/1653us)
+2014-10-13T04:00:49.306 [CORR/CDPMaster/cppContainer-GL - ] CDP_MASTER_THREAD_0: timeout on pthread mutex (to=50000000acs delta=0s/1821us)
+{noformat} AOS: BL: CDPNodes failed to get dpi semaphore AOS:",1,"bl cdpnodes failed to get dpi semaphore
+
+sciverlbtestmira version 03 failed to run between 024917  040049 while project code 0000000246csv was being executed by pi violette schedblock sio tuning mirab3fdm was used with execblock uida002x8fee6bx457"
+ICT-13416,"03 Control 03-01 Antenna, LO and Timing HW This ticket is very similar to ICT-9899 which was verified for Cycle5. But, it seems some exception handling was missing in the LocalOscillator module (timeToTune) or either to include an asynchronous call (one way) on the AntLOController.
+
+In [PRTSPR-35744|https://jira.alma.cl/browse/PRTSPR-35744] was reported a failure on an observation due to one antenna of the array (composed of 45 antennas) crashed after one hour of running. The failure of the antenna was because of a  memory corruption, the problem is under investigation on ICT-8787. But, independent of the particular problem on the antenna, the LocalOscillator did not catch an exception when the 'timeToTune' method was invoked on the AntLOController component associated with the failed antenna (code line 1944). The observation was stopped because an exception during a 'doScanSequence', as shown in java stack trace below. 
+
+{code}
+1940              for (Entry<String, AntLOController> entry : antennaModeController.entrySet()) {
+1941                  final String antName = entry.getKey();
+1942                  // TODO. Do this with a callback rather than sequentially
+1943                  AntLOController aloc = entry.getValue();
+1944                  tuningTimes.put(antName, aloc.timeToTune(ttInfo));
+1945              }
+{code}
+
+
+
+
+
+{noformat}
+2018-08-31T01:24:59.846 WARNING [CONTROL/ACC/javaContainer] Unexpected exception was thrown in functional method 'CONTROL/Array041/alma.Control.InterferometryObservingMode#doSca
+nSequence':
+org.omg.CORBA.TRANSIENT: Retries exceeded, couldn't reconnect to 10.196.21.1:4000
+        at org.jacorb.orb.iiop.ClientIIOPConnection.connect(ClientIIOPConnection.java:226)
+        at org.jacorb.orb.giop.GIOPConnection.sendMessage(GIOPConnection.java:1069)
+        at org.jacorb.orb.giop.GIOPConnection.sendRequest(GIOPConnection.java:1014)
+        at org.jacorb.orb.giop.ClientConnection.sendRequest(ClientConnection.java:309)
+        at org.jacorb.orb.giop.ClientConnection.sendRequest(ClientConnection.java:290)
+        at org.jacorb.orb.Delegate._invoke_internal(Delegate.java:1346)
+        at org.jacorb.orb.Delegate.invoke_internal(Delegate.java:1172)
+        at org.jacorb.orb.Delegate.invoke(Delegate.java:1159)
+        at org.omg.CORBA.portable.ObjectImpl._invoke(ObjectImpl.java:80)
+        at alma.Control._AntLOControllerStub.timeToTune(_AntLOControllerStub.java:1163)
+        at alma.Control.ObservingModes.LocalOscillatorImpl.timeToTune(LocalOscillatorImpl.java:1940)
+        at alma.Control.ObservingModes.ObservingModeBaseImpl.estimateSetupTimes(ObservingModeBaseImpl.java:497)
+        at alma.Control.ObservingModes.ObservingModeBaseImpl.startThread(ObservingModeBaseImpl.java:518)
+        at alma.Control.ObservingModes.InterferometryObservingModeImpl.doScanSequence(InterferometryObservingModeImpl.java:262)
+        at sun.reflect.GeneratedMethodAccessor131.invoke(Unknown Source)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at alma.acs.monitoring.DynamicInterceptor.invoke(DynamicInterceptor.java:114)
+        at com.sun.proxy.$Proxy6.doScanSequence(Unknown Source)
+        at alma.Control.InterferometryObservingModePOATie.doScanSequence(InterferometryObservingModePOATie.java:217)
+        at alma.Control.InterferometryObservingModePOA._invoke(InterferometryObservingModePOA.java:629)
+        at org.jacorb.poa.RequestProcessor.invokeOperation(RequestProcessor.java:414)
+        at org.jacorb.poa.RequestProcessor.process(RequestProcessor.java:738)
+        at org.jacorb.poa.RequestProcessor.run(RequestProcessor.java:909)
+{noformat} Observation crashed due to CORBA.TRANSIENT in one antenna of the array invoking timeToTune method.",0,an exception handling was missing in the localoscillator module or either to include an asynchronous call on the antlocontroller
+ICT-7970,"03 Control There was an issue for some antennas getting on source, which reflected the following logs:
+{noformat}
+Summary
+   Timedout after waiting 0.5000456619262678 seconds for the antennas to go on-source
+Only got 2 good responses from the MountController::waitUntilOnSourceCB function after waiting 4.5000717034936 seconds. 3 good responses were needed. The callback for the MountController::waitUntilOnSourceCB function. Got no response from 2 antennas ( DV22 DV09) Was successful for 2 antennas ( DV20 DV06)
+{noformat}
+
+These could be confusing because there is no certainty in which of the two times were actually waited before timing out. Looking at the code the reason is that the AntennaCallbackImpl is given timeout + 4 for the waitForResponses call and when waitUntilOnSource prints the log message it only prints timeout. The relevant code is:
+{code:java}
+385        try {
+386            cbObj.waitForResponses(timeout() + 4);
+387        } catch (TimeoutEx ex) {
+388            String msg = ""Timedout after waiting "" + timeout()
+389                    + "" seconds for the antennas to go on-source"";
+390            throw toTransientEx(msg, new AcsJTransientEx(ex));
+391        }
+{code}
+
+This inconsistency should be fixed to prevent misunderstandings. Timeout reported by waitUntilOnSource is inconsistent with AntennaCallbackImpl",0,resulting in 2 antennas not responding and 2 antennas succeeding a fix for this inconsistency should be made to prevent future misunderstandings
+ICT-12015,"03-02 Baseline Correlator Reporting similar problem to ICT-3447, however in this particular case, seems the unexpected exception happened in the constructor of Blob::Streamer.
+
+The below message logs show that, starting a sub-scan sequence CDPMaster got unexpected exception. The exception came from Array Thread module instantiating Blob::StreamerThread. This can be shown by messages: ""instantiating blob streamer"", and getting logger component. The only place where that exception might happen is in 'Blob::Streamer' init.
+
+
+{noformat}
+2018-01-25T14:21:27.693	APE2	Debug	CORR/CDPMaster/cppContainer	CORR/CDP_MASTER	starting sub-scan sequence (sa/sai/st/len/ebid=Array016/0/2018-01-25T14:21:28.368/1/uid://A002/Xc99ad7/X4ae0)
+
+2018-01-25T14:21:27.696	APE2	Debug	CORR/CDPMaster/cppContainer	CORR/CDPMaster/cppContainer-GL	instantiating blob streamer (sa/sai/name=Array016/0/BST_Array016_CA)
+2018-01-25T14:21:27.696	APE2	Debug	CORR/CDPMaster/cppContainer	CORR/CDP_MASTER	Getting component: 'curl:///Log'.
+
+2018-01-25T14:21:27.698	APE2	Error	CORR/CDPMaster/cppContainer	CORR/CDP_MASTER	startSubscanSequence handling unexpected exception (sa=Array016)
+{noformat}
+
+
+{code:title=MasterImpl.cpp}
+601        arrayThread_p->startSequence(startTime,
+602                                     subScans,
+603                                     executeBlockId,
+604                                     executeBlockNumber,
+605                                     callback);
+
+
+616    catch ( ... )
+617    {
+618        Control::SubScanCorrelatorData subscanMetadata;
+619
+620        ACS_SHORT_LOG(
+621            (LM_ERROR,
+622             ""startSubscanSequence handling unexpected exception (sa=%s)"",
+623             subarrayId));
+
+{code}
+
+{code:title=ArrayThread.cpp}
+1190    try
+1191    {
+1192        m_blobStreamer_p[SpectralResolutionTypeMod::FULL_RESOLUTION] =
+1193            new Blob::StreamerThread(
+1194                threadName.c_str(),
+1195                m_flowNames[SpectralResolutionTypeMod::FULL_RESOLUTION],
+1196                m_asdmFlag ? m_bdSender_p : NULL,
+1197                m_bdfToDiskFlag,
+1198                m_bdfSimulateStreamTiming,
+1199                metadataList[SpectralResolutionTypeMod::FULL_RESOLUTION],
+1200                m_component_p->getContainerServices()->getComponent<Logging::AcsLogService>(""Log""));
+{code}
+
+{code:title=BlobStreamerThread.cpp}
+78    Blob::Streamer<Corr::CDP::BulkData::Sender>(flowName,
+79                                                bdSender,
+80                                                fileFlag,
+81                                                simulateStreamTiming,
+82                                                blobMetadata),
+{code}
+
+{code:title=BlobStreamer.i}
+447template <typename BDSenderType>
+448void Blob::Streamer<BDSenderType>::init(
+449    string flowName,
+450    BDSenderType *bdSender,
+451    const bool fileFlag,
+452    const bool simulateStreamTiming,
+453    const std::list<Blob::Metadata> &blobMetadata)
+{code} BL: CDPMaster startSubscanSequence handling unexpected exception",0,which came from array thread module instantiating blobstreamerthread in the constructor of blobstreamer
+ICT-9110,"[""simulation""] 03-01 Antenna, LO and Timing HW In http://jira.alma.cl/browse/PRTSPR-24065 it was noted that a monitor point, {{ColdCart3.GET_TEMPERATURE_SENSOR3}}, is not implemented in hardware and this results in an exception being generated based on a non-zero status byte being returned (previously this was masked by a hack for this specific monitor point).
+
+These exceptions are rather cryptic, with the only information being the status byte value in field {{ErrorCode}}.
+
+Please add a user message explaining the exception, preferably using the field name defined by {{Control::EX_USER_ERROR_MSG}}. A suggested message is:
+{noformat}
+Status byte returned by the hardware is non-zero, which indicates an error. This may be expected for some reserved/spare monitor points
+{noformat}
+
+This should be the case for any monitor point that uses this status byte check behaviour. Add explanatory user error message to exceptions generated when a monitor point returns a bad status byte",0,indicating an error suggested message is status byte returned by the hardware is nonzero which indicates an error this may be expected for some reservedspare monitor points
+ICT-11689,"[""OnMonitoring""] 02-12 Archive Online Chain Minutes after ARCHIVE subsystem started and went to OPERATIONAL status correctly, resource {{ARCHIVE_CONNECTION/ADMISNISTRATIVE}} started being unresponsive:
+
+{noformat}
+2017-12-15T19:23:35.298 INFO [ARCHIVE_MASTER_COMP] subsystem state has changed from AVAILABLE/ONLINE to AVAILABLE/OPERATIONAL
+...
+2017-12-15T23:34:22.732 WARNING [ARCHIVE_MASTER_COMP] Too much time taken (12669 seconds), however we didn't time out (60 seconds) for resource 'ARCHIVE_CONNECTION/ADMINISTRATIVE. 
+2017-12-16T03:00:02.882 WARNING [ARCHIVE_MASTER_COMP] Too much time taken (26036 seconds), however we didn't time out (60 seconds) for resource 'ARCHIVE_CONNECTION/ADMINISTRATIVE. 
+2017-12-16T05:27:22.380 WARNING [ARCHIVE_MASTER_COMP] Too much time taken (16834 seconds), however we didn't time out (60 seconds) for resource 'ARCHIVE_CONNECTION/ADMINISTRATIVE.
+...
+2017-12-16T09:01:23.595 WARNING [ARCHIVE_MASTER_COMP] Too much time taken (22938 seconds), however we didn't time out (60 seconds) for resource 'ARCHIVE_CONNECTION/ADMINISTRATIVE.
+{noformat}
+
+{noformat}
+2017-12-16T12:30:33.009	APE2	Debug	ACC/masterContainer	ARCHIVE_MASTER_COMP	About to call error handler ArchiveResourceErrorHandler#resourceUnreachable(ARCHIVE_CONNECTION/ADMINISTRATIVE). Timeout detail: TimeoutException after 60001 ms.
+{noformat}
+
+After some investigation by [~tstaig] it seems likely that the timeout was caused by a slow response from a {{DatabaseReader,java}} class method (line 1830):
+{code:java}
+try {
+			sql = buildString(""SELECT "", colName_paramValue, "" FROM "",
+					tableName_metaInf, "" WHERE "", colName_paramName, ""='"",
+					paramName, ""'"");
+			logger.finest(""Executing SQL: "" + sql);
+			stmt = readConn.createStatement();
+			rs = stmt.executeQuery(sql);
+			if (rs.next()) {
+				out = rs.getString(colName_paramValue);
+			}
+			else {
+				logger.info(""Could not find parameter value for parameter ""
+						+ paramName + "" in table "" + tableName_metaInf);
+			}
+		}
+{code}
+
+It would be good to continue the investigation by adding some debugging log around this call in order to know if it's taking too much time and act accordingly (e.g. reusing the same connection instead of creating a new one each time). ARCHIVE: ""TimeoutException after 60001 ms"" for resource ""ARCHIVE_CONNECTION/ADMINISTRATIVE""",0,was caused by a slow response from a databasereaderjava class method investigation is ongoing to determine the cause and to add debugging log to identify and act on the issue
